@@ -1,9 +1,9 @@
-import React from 'react'
-import { useGlobalContext } from '../context/context'
-import styled from 'styled-components'
-import { MdBusiness, MdLocationOn, MdLink } from 'react-icons/md'
+import React from 'react';
+import { useGlobalContext } from '../context/context';
+import styled from 'styled-components';
+import { MdBusiness, MdLocationOn, MdLink } from 'react-icons/md';
 const Card = () => {
-  const { githubUser } = useGlobalContext()
+  const { githubUser } = useGlobalContext();
   const {
     avatar_url,
     html_url,
@@ -13,7 +13,7 @@ const Card = () => {
     bio,
     location,
     twitter_username,
-  } = githubUser
+  } = githubUser;
   return (
     <Wrapper>
       <header>
@@ -34,13 +34,13 @@ const Card = () => {
         <p>
           <MdLocationOn></MdLocationOn> {location || 'carth'}
         </p>
-        <a href={blog} target='_blank'>
+        <a href={`https://${blog}`} target='_blank'>
           <MdLink></MdLink> {blog}
         </a>
       </div>
     </Wrapper>
-  )
-}
+  );
+};
 const Wrapper = styled.article`
   background: var(--clr-white);
   padding: 1.5rem 2rem;
@@ -120,5 +120,5 @@ const Wrapper = styled.article`
       }
     }
   }
-`
-export default Card
+`;
+export default Card;

@@ -9,9 +9,16 @@ import { Auth0Provider } from '@auth0/auth0-react';
 //dqodht9WenWJyWrzkerCTtO7s5AeRxZ3
 ReactDOM.render(
   <React.StrictMode>
-    <GithubProvider>
-      <App />
-    </GithubProvider>
+    <Auth0Provider
+      domain='dev-um0rprsd.us.auth0.com'
+      clientId='dqodht9WenWJyWrzkerCTtO7s5AeRxZ3'
+      redirectUri={window.location.origin}
+      cacheLocation='localstorage'
+    >
+      <GithubProvider>
+        <App />
+      </GithubProvider>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
